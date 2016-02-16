@@ -44,7 +44,7 @@ public class DriveCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	RobotMap.driveTrainRobotDrive21.arcadeDrive(Robot.oi.getJoystick1());
+    	RobotMap.driveTrainRobotDrive21.arcadeDrive(Robot.oi.getDriveJoystick());
     }
 
     // Make this return true when this Command no longer needs to run execute()
