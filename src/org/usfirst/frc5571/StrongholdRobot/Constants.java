@@ -30,4 +30,11 @@ public class Constants {
 	public final static int SHOOTER_ANGLE_HIGHSHOT_SETPOINT							=   0;
 	public final static int SHOOTER_ANGLE_LOWSHOT_SETPOINT							=   0;
 	
+	//*********************************************************************************
+	//Pneumatics Constants
+	public final static int ARMS_UP													=   0;
+	public final static int ARMS_DOWN												=   1;
+	public final static int LOW_GEAR												=   0;
+	public final static int HIGH_GEAR												=   1;
+	
 }
