@@ -58,7 +58,7 @@ public class RobotMap {
         driveTrainRobotDrive21.setExpiration(0.1);
         driveTrainRobotDrive21.setSensitivity(0.5);
         driveTrainRobotDrive21.setMaxOutput(1.0);
-        driveTrainRobotDrive21.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+
         driveTrainRobotDrive21.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
         shooterLeftBoulderWheel = new CANTalon(5);
         LiveWindow.addActuator("Shooter", "LeftBoulderWheel", shooterLeftBoulderWheel);

@@ -28,7 +28,7 @@ Children:
         Name: RightWheels
       Properties:
         Left Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
-          name: Left Motor Inverted, validators: null, value: true}
+          name: Left Motor Inverted, validators: null, value: false}
         Right Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Right Motor Inverted, validators: null, value: true}
         Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 0.5,
