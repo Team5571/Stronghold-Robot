@@ -98,6 +98,16 @@ Children:
           validators: *id002
           value: '7'
       Base: CAN Talon
+      Name: AimingActuator
+    - Children: []
+      Properties:
+        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id001
+          default: '2'
+          name: CAN ID
+          validators: *id002
+          value: '8'
+      Base: CAN Talon
       Name: ShooterLoader
     Properties:
       Default command parameters: !!robotbuilder.data.properties.ParametersProperty
@@ -309,7 +319,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
-    Name: ShooterSetAngleWithJoystick
+    Name: ShooterAimWithJoystick
   - Children: []
     Properties:
       Parameters: !!robotbuilder.data.properties.ParametersProperty

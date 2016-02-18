@@ -34,6 +34,7 @@ public class RobotMap {
     public static RobotDrive driveTrainRobotDrive21;
     public static CANTalon shooterLeftBoulderWheel;
     public static CANTalon shooterRightBoulderWheel;
+    public static CANTalon shooterAimingMotor;
     public static CANTalon shooterShooterLoader;
     public static Compressor pneumaticsCompressor;
     public static Solenoid pneumaticsLeftArm;
@@ -60,13 +61,17 @@ public class RobotMap {
         driveTrainRobotDrive21.setMaxOutput(1.0);
 
         driveTrainRobotDrive21.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-        shooterLeftBoulderWheel = new CANTalon(5);
-        LiveWindow.addActuator("Shooter", "LeftBoulderWheel", shooterLeftBoulderWheel);
+        
+        //shooterLeftBoulderWheel = new CANTalon(5);
+        //LiveWindow.addActuator("Shooter", "LeftBoulderWheel", shooterLeftBoulderWheel);
         
         shooterRightBoulderWheel = new CANTalon(6);
         LiveWindow.addActuator("Shooter", "RightBoulderWheel", shooterRightBoulderWheel);
+       
+        shooterAimingMotor = new CANTalon(5);
+        LiveWindow.addActuator("Shooter", "AimingActuator", shooterAimingMotor);
         
-        shooterShooterLoader = new CANTalon(7);
+        shooterShooterLoader = new CANTalon(8);
         LiveWindow.addActuator("Shooter", "ShooterLoader", shooterShooterLoader);
         
         pneumaticsCompressor = new Compressor(0);
