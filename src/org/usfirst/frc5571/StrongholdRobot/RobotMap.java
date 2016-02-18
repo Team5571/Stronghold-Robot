@@ -35,6 +35,7 @@ public class RobotMap {
     public static CANTalon shooterLeftBoulderWheel;
     public static CANTalon shooterRightBoulderWheel;
     public static CANTalon shooterShooterLoader;
+    public static CANTalon shooterAimingActuator;
     public static Compressor pneumaticsCompressor;
     public static Solenoid pneumaticsLeftArm;
     public static Solenoid pneumaticsRightArm;
@@ -68,6 +69,9 @@ public class RobotMap {
         
         shooterShooterLoader = new CANTalon(7);
         LiveWindow.addActuator("Shooter", "ShooterLoader", shooterShooterLoader);
+        
+        shooterAimingActuator = new CANTalon(8);
+        LiveWindow.addActuator("Shooter", "AimingActuator", shooterAimingActuator);
         
         pneumaticsCompressor = new Compressor(0);
         
