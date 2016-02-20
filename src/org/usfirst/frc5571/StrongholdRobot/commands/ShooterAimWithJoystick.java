@@ -11,6 +11,7 @@
 
 package org.usfirst.frc5571.StrongholdRobot.commands;
 
+import edu.wpi.first.wpilibj.Joystick.AxisType;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.vision.AxisCamera;
 
@@ -48,7 +49,7 @@ public class ShooterAimWithJoystick extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	double motorSpeed;
-    	RobotMap.shooterAimingMotor.set(Robot.oi.getDriveJoystick().getMagnitude());
+    	RobotMap.shooterAimingActuator.set(Robot.oi.getDriveJoystick().getAxis(AxisType.kY));
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
