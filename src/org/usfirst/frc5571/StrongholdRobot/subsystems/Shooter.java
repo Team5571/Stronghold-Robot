@@ -58,7 +58,8 @@ public class Shooter extends Subsystem {
     	
     	// Initialize Aiming Linear Actuator
     	 aimingActuator.setInverted(true);
-    	 aimingActuator.setFeedbackDevice(FeedbackDevice.AnalogEncoder);
+    	 aimingActuator.setFeedbackDevice(FeedbackDevice.AnalogPot);
+    	 aimingActuator.reverseSensor(true);
     }
 
     public void initShooterWheelsVelocityMode() {
@@ -73,6 +74,16 @@ public class Shooter extends Subsystem {
 
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+    }
+    
+    public	void	aimModePercentVBus()
+    {
+    	aimingActuator.changeControlMode(TalonControlMode.PercentVbus);
+    }
+    
+    public	void	aimModePosition()
+    {
+    	aimingActuator.changeControlMode(TalonControlMode.Position);
     }
 }
 
