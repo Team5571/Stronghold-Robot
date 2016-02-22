@@ -13,8 +13,10 @@ package org.usfirst.frc5571.StrongholdRobot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+import org.usfirst.frc5571.StrongholdRobot.Constants;
 import org.usfirst.frc5571.StrongholdRobot.Robot;
 import org.usfirst.frc5571.StrongholdRobot.RobotMap;
+import org.usfirst.frc5571.StrongholdRobot.Xbox360Controller;
 
 /**
  *
@@ -44,7 +46,11 @@ public class DriveWithJoysick extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	RobotMap.driveTrainRobotDrive21.arcadeDrive(Robot.oi.driveJoystick);
+    	Xbox360Controller xbox;
+    	xbox = Robot.oi.getXbox();
+    	double magnitude = xbox.getRawAxis(Constants.XBOX_DRIVING_MAGNITUDE_JOYSTICK);
+    	double turn = xbox.getRawAxis(Constants.XBOX_DRIVING_TURN_JOYSTICK);
+    	RobotMap.driveTrainRobotDrive21.arcadeDrive(magnitude,turn);
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -1,6 +1,17 @@
 package org.usfirst.frc5571.StrongholdRobot;
 
 public class Constants {
+	// Xbox Controller Controls Mapping
+	public final static int XBOX_SHOOTING_ANGLE_JOYSTICK		= 5;  // Right hand Y axis
+	public final static int XBOX_DRIVING_MAGNITUDE_JOYSTICK		= 1;  // Left hand Y axis
+	public final static int XBOX_DRIVING_TURN_JOYSTICK			= 0;  // Left hand X axis
+	public final static int ARMS_UP_BUTTON						= 7;  // Back Button
+	public final static int ARMS_DOWN_BUTTON					= 8;  // Start Button
+	public final static int LOW_GEAR_BUTTON						= 5;  // Left Bumper
+	public final static int HIGH_GEAR_BUTTON					= 6;  // Right Bumper
+	public final static int SHOOTER_WHEELS_CAPTURE				= 2;  // A Button
+	public final static int SHOOTER_WHEELS_SHOOT				= 4;  // Y Button
+	
 	//*********************************************************************************
 	// DriveTrain Constants
 	public final static double DRIVE_TRAIN_POSITION_Kp							= 0.0;
@@ -46,12 +57,12 @@ public class Constants {
 	
 	//*********************************************************************************
 	//Pneumatics Constants
-	public final static boolean ARMS_UP													= true;
-	public final static boolean ARMS_DOWN												= false;
-	public final static boolean LOW_GEAR												= true;
-	public final static boolean HIGH_GEAR												= false;
-	public final static boolean BOULDER_LAUNCHER_ARMED									= false;
-	public final static boolean BOULDER_LAUNCHER_SHOOT									= true;
+	public final static boolean ARMS_UP												= true;
+	public final static boolean ARMS_DOWN											= false;
+	public final static boolean LOW_GEAR											= true;
+	public final static boolean HIGH_GEAR											= false;
+	public final static boolean BOULDER_LAUNCHER_ARMED								= false;
+	public final static boolean BOULDER_LAUNCHER_SHOOT								= true;
 
 	
 }

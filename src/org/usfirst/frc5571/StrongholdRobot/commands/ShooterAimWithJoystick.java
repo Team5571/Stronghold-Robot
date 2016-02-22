@@ -14,8 +14,10 @@ package org.usfirst.frc5571.StrongholdRobot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+import org.usfirst.frc5571.StrongholdRobot.Constants;
 import org.usfirst.frc5571.StrongholdRobot.Robot;
 import org.usfirst.frc5571.StrongholdRobot.RobotMap;
+import org.usfirst.frc5571.StrongholdRobot.Xbox360Controller;
 
 /**
  *
@@ -46,20 +48,27 @@ public class ShooterAimWithJoystick extends Command {
     }
 
     // Called repeatedly when this Command is scheduled to run
+//    protected void execute() { 
+//    	POVButton = Robot.oi.getDriveJoystick().getPOV(); // slider on Logitech
+//    
+//    	if (POVButton == 0)
+//    		aimInput = 1;
+//    	else if (POVButton == 180)
+//    		aimInput = -1;
+//    	else
+//    		aimInput =0;
+//    	SmartDashboard.putNumber("POV", aimInput);
+//    	Robot.shooter.aimModePercentVBus();
+//    	RobotMap.shooterAimingActuator.set(aimInput);
+//    }
     protected void execute() { 
-    	POVButton = Robot.oi.getDriveJoystick().getPOV(); // slider on Logitech
-    
-    	if (POVButton == 0)
-    		aimInput = 1;
-    	else if (POVButton == 180)
-    		aimInput = -1;
-    	else
-    		aimInput =0;
-    	SmartDashboard.putNumber("POV", aimInput);
+    	Xbox360Controller xbox;
+    	xbox = Robot.oi.getXbox();
+    	double aimInput = xbox.getRawAxis(Constants.XBOX_SHOOTING_ANGLE_JOYSTICK);
     	Robot.shooter.aimModePercentVBus();
     	RobotMap.shooterAimingActuator.set(aimInput);
     }
-
+    
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return false;

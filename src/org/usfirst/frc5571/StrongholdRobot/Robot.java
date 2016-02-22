@@ -12,11 +12,13 @@
 package org.usfirst.frc5571.StrongholdRobot;
 
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc5571.StrongholdRobot.commands.*;
 import org.usfirst.frc5571.StrongholdRobot.subsystems.*;
@@ -128,6 +130,11 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        
+        // Update xboxcontroller status;
+        SmartDashboard.putBoolean("XboxAButton", oi.getXbox().getRawButton(1));
+        SmartDashboard.putDouble("XboxRghtX", oi.getXbox().getX(Hand.kRight));
+        
     }
 
     /**
