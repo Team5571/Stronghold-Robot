@@ -13,6 +13,9 @@ package org.usfirst.frc5571.StrongholdRobot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc5571.StrongholdRobot.Robot;
+import org.usfirst.frc5571.StrongholdRobot.Constants;
+
+
 
 /**
  *
@@ -38,6 +41,7 @@ public class ShooterWheelsFastBall extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.shooter.setShooterWheelsOpenLoop(Constants.SHOOTER_WHEELS_SHOOT);
     }
 
     // Called repeatedly when this Command is scheduled to run

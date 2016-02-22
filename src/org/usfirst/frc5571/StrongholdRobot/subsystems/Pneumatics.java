@@ -71,11 +71,11 @@ public class Pneumatics extends Subsystem {
     	this.rightGearShift.set(Constants.LOW_GEAR);
     }
     
-    private void armBoulderLauncher() {
+    public void armBoulderLauncher() {
     	this.boulderLauncher.set(Constants.BOULDER_LAUNCHER_ARMED); 
 	}
     
-    private void shootBoulder() {
+    public void shootBoulder() {
     	this.boulderLauncher.set(Constants.BOULDER_LAUNCHER_SHOOT); 
 	}
 

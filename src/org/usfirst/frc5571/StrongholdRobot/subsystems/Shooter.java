@@ -75,16 +75,35 @@ public class Shooter extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public	void	aimModePercentVBus()
+    public void setShooterWheelsOpenLoop(double wheelSpeed) {
+    	leftBoulderWheel.changeControlMode(TalonControlMode.PercentVbus);
+    	rightBoulderWheel.changeControlMode(TalonControlMode.PercentVbus);
+    	leftBoulderWheel.set(wheelSpeed);
+    	rightBoulderWheel.set(wheelSpeed * -1.0);
+    	return;
+    }
+    
+    
+    public void	aimModePercentVBus()
     {
     	aimingActuator.changeControlMode(TalonControlMode.PercentVbus);
     }
     
-    public	void	aimAtPosition(int aimPosition)
+    public void	aimAtPosition(int aimPosition)
     {
     	aimingActuator.changeControlMode(TalonControlMode.Position);
     	aimingActuator.set(aimPosition);
     }
-}
+    
+    public void kickBall()
+    {
+    	boulderLoader.set(Constants.BOULDER_LAUNCHER_SHOOT);
+    }
+    
+    public void resetKicker()
+    {
+    	boulderLoader.set(Constants.BOULDER_LAUNCHER_ARMED);
+    }
+};
 
 
