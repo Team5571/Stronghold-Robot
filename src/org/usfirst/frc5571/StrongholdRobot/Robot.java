@@ -61,20 +61,20 @@ public class Robot extends IterativeRobot {
         shooter.initShooter();
         
     // Gyro
-        try {
-		/* Communicate w/navX MXP via the MXP SPI Bus.                                     */
-		/* Alternatively:  I2C.Port.kMXP, SerialPort.Port.kMXP or SerialPort.Port.kUSB     */
-		/* See http://navx-mxp.kauailabs.com/guidance/selecting-an-interface/ for details. */
-	
-		ahrs = new AHRS(SerialPort.Port.kUSB);
-	
-		//ahrs = new AHRS(SPI.Port.kMXP); 
-		//SerialPort serialPort = new SerialPortJNI();
-	
-	
-	} catch (RuntimeException ex ) {
-		DriverStation.reportError("Error instantiating navX MXP:  " + ex.getMessage(), true);
-	} 
+//        try {
+//		/* Communicate w/navX MXP via the MXP SPI Bus.                                     */
+//		/* Alternatively:  I2C.Port.kMXP, SerialPort.Port.kMXP or SerialPort.Port.kUSB     */
+//		/* See http://navx-mxp.kauailabs.com/guidance/selecting-an-interface/ for details. */
+//	
+//		ahrs = new AHRS(SerialPort.Port.kUSB);
+//	
+//		//ahrs = new AHRS(SPI.Port.kMXP); 
+//		//SerialPort serialPort = new SerialPortJNI();
+//	
+//	
+//	} catch (RuntimeException ex ) {
+//		DriverStation.reportError("Error instantiating navX MXP:  " + ex.getMessage(), true);
+//	} 
 
 	
         // OI must be constructed after subsystems. If the OI creates Commands

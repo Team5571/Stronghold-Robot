@@ -57,9 +57,8 @@ public class Shooter extends Subsystem {
     	rightBoulderWheel.reverseSensor(Constants.SHOOTER_RIGHT_WHEEL_INVERT_SENSOR);
     	
     	// Initialize Aiming Linear Actuator
-    	 aimingActuator.setInverted(true);
+    	// aimingActuator.setInverted(true);
     	 aimingActuator.setFeedbackDevice(FeedbackDevice.AnalogPot);
-    	 aimingActuator.reverseSensor(true);
     }
 
     public void initShooterWheelsVelocityMode() {
@@ -81,9 +80,11 @@ public class Shooter extends Subsystem {
     	aimingActuator.changeControlMode(TalonControlMode.PercentVbus);
     }
     
-    public	void	aimModePosition()
+    public	void	aimAtPosition(int aimPosition)
     {
     	aimingActuator.changeControlMode(TalonControlMode.Position);
+    	aimingActuator.set(aimPosition);
     }
 }
+
 
