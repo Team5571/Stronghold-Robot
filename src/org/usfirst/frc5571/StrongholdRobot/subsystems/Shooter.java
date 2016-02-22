@@ -95,15 +95,7 @@ public class Shooter extends Subsystem {
     	aimingActuator.set(aimPosition);
     }
     
-    public void kickBall()
-    {
-    	boulderLoader.set(Constants.BOULDER_LAUNCHER_SHOOT);
-    }
-    
-    public void resetKicker()
-    {
-    	boulderLoader.set(Constants.BOULDER_LAUNCHER_ARMED);
-    }
+  
 };
 
 

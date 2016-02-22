@@ -15,7 +15,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc5571.StrongholdRobot.Constants;
 import org.usfirst.frc5571.StrongholdRobot.Robot;
-import org.usfirst.frc5571.StrongholdRobot.Constants;
 
 /**
  *
