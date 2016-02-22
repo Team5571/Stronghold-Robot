@@ -63,7 +63,6 @@ public class RobotMap {
         driveTrainRobotDrive21.setSensitivity(0.5);
         driveTrainRobotDrive21.setMaxOutput(1.0);
 
-        driveTrainRobotDrive21.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
         shooterLeftBoulderWheel = new CANTalon(5);
         LiveWindow.addActuator("Shooter", "LeftBoulderWheel", shooterLeftBoulderWheel);
         
@@ -103,13 +102,8 @@ public class RobotMap {
         driveTrainLeftWheelsSlave.set(driveTrainLeftWheels.getDeviceID());
         
         driveTrainRightWheelsSlave = new CANTalon(4);
-        LiveWindow.addActuator("driveTrain", "RightWheelsSlavq", driveTrainRightWheelsSlave);
+        LiveWindow.addActuator("driveTrain", "RightWheelsSlave", driveTrainRightWheelsSlave);
         driveTrainRightWheelsSlave.changeControlMode(TalonControlMode.Follower);
         driveTrainRightWheelsSlave.set(driveTrainRightWheels.getDeviceID());
-        
-        driveTrainRightWheels.setInverted(true);
-        driveTrainLeftWheelsSlave.setInverted(true);
-        
-
     }
 }
