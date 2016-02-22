@@ -13,6 +13,12 @@ public class Constants {
 	public final static double DRIVE_TRAIN_VELOCITY_Kd							= 0.0;
 	public final static double DRIVE_TRAIN_VELOCITY_Kf							= 0.0;
 	
+	// Drive train tuning parmeters used in 2015 Recycle Rush Robot
+	static double FAST_DRIVE_MAGNITUDE_SCALE = 0.5;
+	static double FAST_DRIVE_TWIST_SCALE = 0.75;
+	static double FINE_DRIVE_MAGNITUDE_SCALE = 0.3;
+	static double FINE_DRIVE_TWIST_SCALE = 0.45;
+
 	
 	//*********************************************************************************
 	//Shooter Constants
