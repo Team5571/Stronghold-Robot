@@ -59,29 +59,26 @@ public class Constants {
 	public final static double SHOOTER_ANGLE_POSITION_Ki						= 0.0;
 	public final static double SHOOTER_ANGLE_POSITION_Kd						= 0.0;
 	public final static double SHOOTER_ANGLE_POSITION_Kf						= 0.0;
+	public final static boolean	SHOOTER_ANGLE_MOTOR_INVERTED					= false;
+	public final static boolean SHOOTER_ANGLE_POT_INVERTED						= false;
+	public final static boolean SHOOTER_ANGLE_BRAKE_ENABLED						= true;
+	public final static int SHOOTER_FORWARD_SOFTLIMIT							= 800;
+	public final static int SHOOTER_REVERSE_SOFTLIMIT							= 100;
+	public final static int SHOOTER_ANGLE_HIGHSHOT_SETPOINT						= 200;
+	public final static int SHOOTER_ANGLE_LOWSHOT_SETPOINT						= 200;
+	public final static int SHOOTER_ANGLE_LOAD_SETPOINT							= 700;
+	public final static int SHOOTER_AIMING_ERROR_THRESHOLD						= 20;
 	
 	public final static double SHOOTER_WHEELS_VELOCITY_Kp						= 0.0;
 	public final static double SHOOTER_WHEELS_VELOCITY_Ki						= 0.0;
 	public final static double SHOOTER_WHEELS_VELOCITY_Kd						= 0.0;
 	public final static double SHOOTER_WHEELS_VELOCITY_Kf						= 0.0;
-	
 	public final static boolean	SHOOTER_LEFT_WHEEL_INVERTED						= false;
 	public final static boolean	SHOOTER_RIGHT_WHEEL_INVERTED					= true;
-	public final static boolean	SHOOTER_ANGLE_MOTOR_INVERTED					= false;
-	public final static boolean SHOOTER_ANGLE_POT_INVERTED						= false;
-	public final static boolean SHOOTER_ANGLE_BRAKE_ENABLED						= true;
-
-	
 	public final static boolean	SHOOTER_LEFT_WHEEL_INVERT_SENSOR				= false;
 	public final static boolean	SHOOTER_RIGHT_WHEEL_INVERT_SENSOR				= false;
 	public final static double SHOOTER_WHEEL_INTAKE_SPEED						= -0.50;
-	public final static double SHOOTER_WHEEL_HIGH_SPEED							= 1.0;
-	
-		
-	public final static int SHOOTER_ANGLE_HIGHSHOT_SETPOINT						=   100;
-	public final static int SHOOTER_ANGLE_LOWSHOT_SETPOINT						=   200;
-	public final static int SHOOTER_ANGLE_LOAD_SETPOINT							=   700;
-	public final static int SHOOTER_AIMING_ERROR_THRESHOLD						= 	20;
+	public final static double SHOOTER_WHEEL_HIGH_SPEED							= 1.0;	
 	
 	public final static int	SHOOTER_KICKER_DELAY_TIME							=  1;
 

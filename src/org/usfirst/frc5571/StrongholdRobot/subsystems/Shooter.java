@@ -61,6 +61,10 @@ public class Shooter extends Subsystem {
     	aimingActuator.setFeedbackDevice(FeedbackDevice.AnalogPot);
     	aimingActuator.reverseSensor(Constants.SHOOTER_ANGLE_POT_INVERTED);
     	aimingActuator.enableBrakeMode(Constants.SHOOTER_ANGLE_BRAKE_ENABLED);
+    	aimingActuator.setForwardSoftLimit(Constants.SHOOTER_FORWARD_SOFTLIMIT);
+    	aimingActuator.enableForwardSoftLimit(true);
+    	aimingActuator.setReverseSoftLimit(Constants.SHOOTER_REVERSE_SOFTLIMIT);
+    	aimingActuator.enableReverseSoftLimit(true);
     }
 
     public void initShooterWheelsVelocityMode() {
