@@ -78,7 +78,7 @@ public class OI {
         driveJoystick = new Joystick(0);
         
         aimBoulderPickup = new JoystickButton(driveJoystick, 10);
-        aimBoulderPickup.whenPressed(new ShooterAimClosedLoop(0));
+        aimBoulderPickup.whenPressed(new ShooterAimClosedLoop(800));
         aimLowShot = new JoystickButton(driveJoystick, 8);
         aimLowShot.whenPressed(new ShooterAimClosedLoop(40));
         aimHighShot = new JoystickButton(driveJoystick, 6);

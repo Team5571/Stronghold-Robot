@@ -16,6 +16,8 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc5571.StrongholdRobot.Robot;
 import org.usfirst.frc5571.StrongholdRobot.RobotMap;
+import org.usfirst.frc5571.StrongholdRobot.Constants;
+
 
 /**
  *
@@ -49,11 +51,18 @@ public class ShooterAimClosedLoop extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        if (Robot.shooter.getAimingError() <= Constants.SHOOTER_AIMING_ERROR_THRESHOLD){
+        	Robot.shooter.stopAimingActuaor();
+        	return true;
+        }
+        else {
+        	return false;
+        }
     }
 
     // Called once after isFinished returns true
@@ -63,5 +72,6 @@ public class ShooterAimClosedLoop extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	Robot.shooter.stopAimingActuaor();
     }
 }
