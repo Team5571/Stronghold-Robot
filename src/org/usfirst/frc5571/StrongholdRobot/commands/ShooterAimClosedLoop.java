@@ -58,10 +58,10 @@ public class ShooterAimClosedLoop extends Command {
     protected boolean isFinished() {
         if (Robot.shooter.getAimingError() <= Constants.SHOOTER_AIMING_ERROR_THRESHOLD){
         	Robot.shooter.stopAimingActuaor();
-        	return true;
+        	return false;
         }
         else {
-        	return false;
+        	return true;
         }
     }
 
