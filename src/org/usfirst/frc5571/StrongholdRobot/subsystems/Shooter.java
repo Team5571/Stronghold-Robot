@@ -85,7 +85,7 @@ public class Shooter extends Subsystem {
     	leftBoulderWheel.changeControlMode(TalonControlMode.PercentVbus);
     	rightBoulderWheel.changeControlMode(TalonControlMode.PercentVbus);
     	leftBoulderWheel.set(wheelSpeed);
-    	rightBoulderWheel.set(wheelSpeed * -1.0);
+    	rightBoulderWheel.set(wheelSpeed);
     	return;
     }
     
