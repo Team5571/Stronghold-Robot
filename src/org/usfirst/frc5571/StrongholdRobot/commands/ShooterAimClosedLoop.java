@@ -18,6 +18,8 @@ import org.usfirst.frc5571.StrongholdRobot.Robot;
 import org.usfirst.frc5571.StrongholdRobot.RobotMap;
 import org.usfirst.frc5571.StrongholdRobot.Constants;
 
+import java.lang.Math;
+
 
 /**
  *
@@ -45,24 +47,25 @@ public class ShooterAimClosedLoop extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.shooter.aimAtPosition((int) m_aimingAngle);
+    	
     }
     
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	
+    	Robot.shooter.aimAtPosition (m_aimingAngle);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if (Robot.shooter.getAimingError() <= Constants.SHOOTER_AIMING_ERROR_THRESHOLD){
-        	Robot.shooter.stopAimingActuaor();
-        	return false;
-        }
-        else {
-        	return true;
-        }
+//        if ( (Math.abs(Robot.shooter.getAimingError())) < Constants.SHOOTER_AIMING_ERROR_THRESHOLD){
+//        	Robot.shooter.stopAimingActuaor();
+//        	return true;
+//        }
+//        else {
+//        	return false;
+//        }
+    	return false;
     }
 
     // Called once after isFinished returns true
