@@ -92,5 +92,10 @@ public class Constants {
 	public final static boolean BOULDER_LAUNCHER_ARMED								= false;
 	public final static boolean BOULDER_LAUNCHER_SHOOT								= true;
 
+	//*********************************************************************************
+	//Camera Constants
+	public final static int CAMERA_640_x_480										= 0;
+	public final static int CAMERA_320_x_240										= 1;
+	public final static int CAMERA_160_x_120										= 2;
 	
 }
