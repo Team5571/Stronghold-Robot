@@ -78,13 +78,13 @@ public class RobotMap {
         pneumaticsCompressor = new Compressor(0);
         
         
-        pneumaticsLeftArm = new Solenoid(0, 1);
+        pneumaticsLeftArm = new Solenoid(0, 0);
         LiveWindow.addActuator("Pneumatics", "LeftArm", pneumaticsLeftArm);
         
         pneumaticsRightArm = new Solenoid(0, 2);
         LiveWindow.addActuator("Pneumatics", "RightArm", pneumaticsRightArm);
         
-        pneumaticsLeftGearShift = new Solenoid(0, 3);
+        pneumaticsLeftGearShift = new Solenoid(0, 1);
         LiveWindow.addActuator("Pneumatics", "LeftGearShift", pneumaticsLeftGearShift);
         
         pneumaticsRightGearShift = new Solenoid(0, 5);
