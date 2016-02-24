@@ -64,7 +64,7 @@ public class ShooterAimWithJoystick extends Command {
     protected void execute() { 
     	Xbox360Controller xbox;
     	xbox = Robot.oi.getXbox();
-    	double aimInput = xbox.getRawAxis(Constants.XBOX_SHOOTING_ANGLE_JOYSTICK);
+    	double aimInput = xbox.getRawAxis(Constants.XBOX_SHOOTING_ANGLE_JOYSTICK) * -1.0; // Back on stick is up.
     	Robot.shooter.aimModePercentVBus();
     	RobotMap.shooterAimingActuator.set(aimInput);
     }
