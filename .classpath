@@ -11,6 +11,7 @@
 	<classpathentry kind="lib" path="navx-mxp/java/lib/navx_frc.jar" sourcepath="navx-mxp/java/src">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:platform:/resource/StrongholdRobot/navx-mxp/java/lib/navx_frc.jar!/docs"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="StrongholdRobot/navx-mxp/java/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
