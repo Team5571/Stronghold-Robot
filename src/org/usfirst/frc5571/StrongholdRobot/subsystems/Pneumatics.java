@@ -66,11 +66,11 @@ public class Pneumatics extends Subsystem {
     }
     
     public void armBoulderLauncher() {
-    	this.boulderLauncher.set(Constants.BOULDER_LAUNCHER_ARMED); 
+    	this.boulderLauncher.set(Constants.BOULDER_KICKER_ARMED); 
 	}
     
-    public void shootBoulder() {
-    	this.boulderLauncher.set(Constants.BOULDER_LAUNCHER_SHOOT); 
+    public void activateBoulderLauncher() {
+    	this.boulderLauncher.set(Constants.BOULDER_KICKER_SHOOT); 
 	}
 
     public void initDefaultCommand() {

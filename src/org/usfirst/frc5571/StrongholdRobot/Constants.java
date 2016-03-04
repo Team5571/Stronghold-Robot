@@ -79,9 +79,8 @@ public class Constants {
 	public final static boolean	SHOOTER_LEFT_WHEEL_INVERT_SENSOR				= false;
 	public final static boolean	SHOOTER_RIGHT_WHEEL_INVERT_SENSOR				= false;
 	public final static double SHOOTER_WHEEL_INTAKE_SPEED						= 0.5;
-	public final static double SHOOTER_WHEEL_HIGH_SPEED							=-1.0;	
-	
-	public final static int	SHOOTER_KICKER_DELAY_TIME							=  1;
+	public final static double SHOOTER_WHEEL_HIGH_SPEED							=-1.0;
+	public final static double SHOOTER_WHEEL_SPINUP_DELAY						= 1.0;
 
 	
 	//*********************************************************************************
@@ -90,8 +89,9 @@ public class Constants {
 	public final static boolean ARMS_DOWN											= false;
 	public final static boolean LOW_GEAR											= false;
 	public final static boolean HIGH_GEAR											= true;
-	public final static boolean BOULDER_LAUNCHER_ARMED								= false;
-	public final static boolean BOULDER_LAUNCHER_SHOOT								= true;
+	public final static boolean BOULDER_KICKER_ARMED								= false;
+	public final static boolean BOULDER_KICKER_SHOOT								= true;
+	public final static double	BOULDER_KICKER_DELAY_TIME							=  0.5;
 
 	
 }

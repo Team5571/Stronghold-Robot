@@ -114,7 +114,8 @@ public class OI {
       raiseArms = new JoystickButton(xboxController, Constants.XBOX_ARMS_UP_BUTTON);
       raiseArms.whenPressed(new PneumaticsRaiseArms());
       kickBoulder = new JoystickButton(xboxController, Constants.XBOX_KICK_BOULDER);
-      kickBoulder.whenPressed(new ShooterLaunchBoulder());
+      kickBoulder.whenActive(new PneumaticsKickBoulder());
+      kickBoulder.whenReleased(new PneumaticsRetractKicker());
       
         // SmartDashboard Buttons
         SmartDashboard.putData("AutonomousDoNothing", new AutonomousDoNothing());
