@@ -32,6 +32,7 @@ public class Constants {
 	public final static int XBOX_SHOOTER_WHEELS_SHOOT			= XBOX_Y_BUTTON;
 	public final static int XBOX_AIM_PICKUP						= XBOX_X_BUTTON;
 	public final static int XBOX_AIM_HIGHSHOT					= XBOX_B_BUTTON;
+	public final static int XBOX_KICK_BOULDER					= XBOX_LEFT_JOYSTICK_BUTTON;
 
 	
 	//*********************************************************************************
@@ -65,7 +66,7 @@ public class Constants {
 	public final static int SHOOTER_FORWARD_SOFTLIMIT							= 720; 
 	public final static int SHOOTER_REVERSE_SOFTLIMIT							= 70;
 	public final static int SHOOTER_ANGLE_HIGHSHOT_SETPOINT						= 200;
-	public final static int SHOOTER_ANGLE_LOWSHOT_SETPOINT						= 200;
+	public final static int SHOOTER_ANGLE_LOWSHOT_SETPOINT						= 600;
 	public final static int SHOOTER_ANGLE_LOAD_SETPOINT							= 700;
 	public final static int SHOOTER_AIMING_ERROR_THRESHOLD						= 20;
 	
