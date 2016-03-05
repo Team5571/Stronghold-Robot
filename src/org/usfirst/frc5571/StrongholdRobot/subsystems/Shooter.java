@@ -113,6 +113,13 @@ public class Shooter extends Subsystem {
     	aimingActuator.changeControlMode(TalonControlMode.PercentVbus);
     	aimingActuator.set(0);
     }
+    
+    public double applyAimingActuatorDeadZone(double value) {
+    	double deadZone = Constants.SHOOTER_AIMING_ACTUATOR_DEADZONE;        
+    	if (Math.abs(value) < deadZone )
+                return 0;
+        return value;
+}
 }
 
 

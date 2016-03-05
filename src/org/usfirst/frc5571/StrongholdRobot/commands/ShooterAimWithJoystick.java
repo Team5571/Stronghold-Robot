@@ -60,13 +60,13 @@ public class ShooterAimWithJoystick extends Command {
 //    	SmartDashboard.putNumber("POV", aimInput);
 //    	Robot.shooter.aimModePercentVBus();
 //    	RobotMap.shooterAimingActuator.set(aimInput);
-//    }
+//    
     protected void execute() { 
     	Xbox360Controller xbox;
     	xbox = Robot.oi.getXbox();
     	double aimInput = xbox.getRawAxis(Constants.XBOX_SHOOTING_ANGLE_JOYSTICK) * -1.0; // Back on stick is up.
     	Robot.shooter.aimModePercentVBus();
-    	RobotMap.shooterAimingActuator.set(aimInput);
+    	RobotMap.shooterAimingActuator.set(Robot.shooter.applyAimingActuatorDeadZone(aimInput));
     }
     
     // Make this return true when this Command no longer needs to run execute()
@@ -81,5 +81,6 @@ public class ShooterAimWithJoystick extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	RobotMap.shooterAimingActuator.set(0);
     }
 }
