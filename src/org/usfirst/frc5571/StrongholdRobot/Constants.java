@@ -63,12 +63,12 @@ public class Constants {
 	public final static boolean	SHOOTER_ANGLE_MOTOR_INVERTED					= false;
 	public final static boolean SHOOTER_ANGLE_POT_INVERTED						= false;
 	public final static boolean SHOOTER_ANGLE_BRAKE_ENABLED						= true;
-	public final static int SHOOTER_FORWARD_SOFTLIMIT							= 720; 
+	public final static int SHOOTER_FORWARD_SOFTLIMIT							= 760; 
 	public final static int SHOOTER_REVERSE_SOFTLIMIT							= 70;
 	public final static int SHOOTER_ANGLE_HIGHSHOT_SETPOINT						= 100;
 	public final static int SHOOTER_ANGLE_LOWSHOT_SETPOINT						= 600;
 	public final static int SHOOTER_ANGLE_PARKING_SETPOINT						= 200;
-	public final static int SHOOTER_ANGLE_LOAD_SETPOINT							= 700;
+	public final static int SHOOTER_ANGLE_LOAD_SETPOINT							= 755;
 	public final static int SHOOTER_AIMING_ERROR_THRESHOLD						= 20;
 	public final static double SHOOTER_AIMING_ACTUATOR_DEADZONE					= 0.10;
 	
