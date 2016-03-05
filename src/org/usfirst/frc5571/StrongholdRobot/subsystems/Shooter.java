@@ -99,7 +99,7 @@ public class Shooter extends Subsystem {
     {
     	aimingActuator.changeControlMode(TalonControlMode.Position);
     	aimingActuator.setProfile(0);
-    	//aimingActuator.clearIAccum();
+    	aimingActuator.clearIAccum();
     	aimingActuator.set(aimPosition);
     }
     

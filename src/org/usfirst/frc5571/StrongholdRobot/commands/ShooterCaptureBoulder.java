@@ -12,6 +12,9 @@
 package org.usfirst.frc5571.StrongholdRobot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import org.usfirst.frc5571.StrongholdRobot.Constants;
 import org.usfirst.frc5571.StrongholdRobot.Robot;
 
 /**
@@ -42,6 +45,8 @@ public class ShooterCaptureBoulder extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.shooter.aimAtPosition (Constants.SHOOTER_ANGLE_LOAD_SETPOINT);
+    	Robot.shooter.setShooterWheelsOpenLoop(Constants.SHOOTER_WHEEL_INTAKE_SPEED);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -51,10 +56,13 @@ public class ShooterCaptureBoulder extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.shooter.setShooterWheelsOpenLoop(0);
+    	
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	Robot.shooter.setShooterWheelsOpenLoop(0);
     }
 }

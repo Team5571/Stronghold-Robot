@@ -56,7 +56,7 @@ public class Constants {
 	
 	//*********************************************************************************
 	//Shooter Constants
-	public final static double SHOOTER_ANGLE_POSITION_Kp						= 0.0;
+	public final static double SHOOTER_ANGLE_POSITION_Kp						= 8.0;
 	public final static double SHOOTER_ANGLE_POSITION_Ki						= 0.0;
 	public final static double SHOOTER_ANGLE_POSITION_Kd						= 0.0;
 	public final static double SHOOTER_ANGLE_POSITION_Kf						= 0.0;
@@ -65,8 +65,9 @@ public class Constants {
 	public final static boolean SHOOTER_ANGLE_BRAKE_ENABLED						= true;
 	public final static int SHOOTER_FORWARD_SOFTLIMIT							= 720; 
 	public final static int SHOOTER_REVERSE_SOFTLIMIT							= 70;
-	public final static int SHOOTER_ANGLE_HIGHSHOT_SETPOINT						= 200;
+	public final static int SHOOTER_ANGLE_HIGHSHOT_SETPOINT						= 100;
 	public final static int SHOOTER_ANGLE_LOWSHOT_SETPOINT						= 600;
+	public final static int SHOOTER_ANGLE_PARKING_SETPOINT						= 500;
 	public final static int SHOOTER_ANGLE_LOAD_SETPOINT							= 700;
 	public final static int SHOOTER_AIMING_ERROR_THRESHOLD						= 20;
 	
@@ -91,7 +92,7 @@ public class Constants {
 	public final static boolean HIGH_GEAR											= true;
 	public final static boolean BOULDER_KICKER_ARMED								= false;
 	public final static boolean BOULDER_KICKER_SHOOT								= true;
-	public final static double	BOULDER_KICKER_DELAY_TIME							=  0.5;
+	public final static double	BOULDER_KICKER_DELAY_TIME							=  0.25;
 
 	
 }

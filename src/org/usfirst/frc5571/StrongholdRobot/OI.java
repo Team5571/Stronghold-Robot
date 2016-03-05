@@ -98,8 +98,8 @@ public class OI {
       aimHighShot = new JoystickButton(xboxController, Constants.XBOX_AIM_HIGHSHOT);
       aimHighShot.whenPressed(new ShooterAimClosedLoop(Constants.SHOOTER_ANGLE_HIGHSHOT_SETPOINT));
       loadBoulder = new JoystickButton(xboxController, Constants.XBOX_SHOOTER_WHEELS_CAPTURE);
-      loadBoulder.whenPressed(new ShooterWheelsIntake());
-      loadBoulder.whenReleased(new ShooterWheelsStop());
+      loadBoulder.whileHeld(new ShooterCaptureBoulder());
+      loadBoulder.whenReleased(new ShooterAimClosedLoop(Constants.SHOOTER_ANGLE_PARKING_SETPOINT));
       shootBoulder = new JoystickButton(xboxController, Constants.XBOX_SHOOTER_WHEELS_SHOOT);
       shootBoulder.whenPressed(new ShooterWheelsFastBall());
       shootBoulder.whenReleased(new ShooterWheelsSlowBall());
@@ -114,8 +114,8 @@ public class OI {
       raiseArms = new JoystickButton(xboxController, Constants.XBOX_ARMS_UP_BUTTON);
       raiseArms.whenPressed(new PneumaticsRaiseArms());
       kickBoulder = new JoystickButton(xboxController, Constants.XBOX_KICK_BOULDER);
-      kickBoulder.whenActive(new PneumaticsKickBoulder());
-      kickBoulder.whenReleased(new PneumaticsRetractKicker());
+      kickBoulder.whenPressed(new PneumaticsKickBoulder());
+//      kickBoulder.whenReleased(new PneumaticsRetractKicker());
       
         // SmartDashboard Buttons
         SmartDashboard.putData("AutonomousDoNothing", new AutonomousDoNothing());
