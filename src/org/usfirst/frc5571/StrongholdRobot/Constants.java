@@ -95,5 +95,10 @@ public class Constants {
 	public final static boolean BOULDER_KICKER_SHOOT								= true;
 	public final static double	BOULDER_KICKER_DELAY_TIME							=  0.25;
 
+	//*********************************************************************************
+	//Camera Constants
+	public final static int CAMERA_640_x_480										= 0;
+	public final static int CAMERA_320_x_240										= 1;
+	public final static int CAMERA_160_x_120										= 2;
 	
 }
