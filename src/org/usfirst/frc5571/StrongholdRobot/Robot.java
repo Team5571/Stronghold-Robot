@@ -59,6 +59,8 @@ public class Robot extends IterativeRobot {
     public static USBCamera driveCameraLeft;
     public static USBCamera driveCameraRear;
     public static Image image;
+	USBCamera currentCamera;
+
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -100,7 +102,8 @@ public class Robot extends IterativeRobot {
        driveCameraFront.updateSettings();
        //driveCameraFront.startCapture();
       // Timer.delay(2);
-      
+      currentCamera = driveCameraFront;
+      currentCamera.startCapture();
        
 //        driveCameraFront = new USBCamera("cam1");
 //        driveCameraRight = new USBCamera("cam2");
@@ -192,26 +195,26 @@ public class Robot extends IterativeRobot {
     }
 
     public void disabledPeriodic() {
-    	Timer timer = new Timer();
-    	double pointOfView;
+        Scheduler.getInstance().run();
+        int pointOfView;
         Scheduler.getInstance().run();
         
-        pointOfView = Robot.oi.xboxController.getRawAxis(6);
+        pointOfView = Robot.oi.xboxController.getPOV(0);
         SmartDashboard.putNumber("POV", pointOfView);
-        if (180 == pointOfView)
+        if (pointOfView == 0)
         {
         	Robot.driveCameraFront.stopCapture();
         	Robot.shootingCamera.startCapture();
-        	Robot.shootingCamera.getImage(image);
-        	Robot.server.setImage(image); 
+        	currentCamera = shootingCamera;
         }
-        if (90 == pointOfView)
+        else if (pointOfView == 90)
         {
         	Robot.shootingCamera.stopCapture();
         	Robot.driveCameraFront.startCapture();
-        	Robot.driveCameraFront.getImage(image);
-        	Robot.server.setImage(image); 
+        	currentCamera = driveCameraFront;
         }
+    	currentCamera.getImage(image);
+        Robot.server.setImage(image); 
     }
 
     public void autonomousInit() {
@@ -244,26 +247,26 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putBoolean("XboxAButton", oi.getXbox().getRawButton(1));
         SmartDashboard.putDouble("XboxRghtX", oi.getXbox().getX(Hand.kRight));
         
-        Timer timer = new Timer();
-    	double pointOfView;
+        int pointOfView;
         Scheduler.getInstance().run();
         
-        pointOfView = Robot.oi.xboxController.getRawAxis(1);
+        pointOfView = Robot.oi.xboxController.getPOV(0);
         SmartDashboard.putNumber("POV", pointOfView);
-        if (pointOfView > 0.5)
+        if (pointOfView == 0)
         {
         	Robot.driveCameraFront.stopCapture();
         	Robot.shootingCamera.startCapture();
-        	Robot.shootingCamera.getImage(image);
-        	Robot.server.setImage(image); 
+        	currentCamera = shootingCamera;
         }
-        else if (pointOfView < -0.5)
+        else if (pointOfView == 90)
         {
         	Robot.shootingCamera.stopCapture();
         	Robot.driveCameraFront.startCapture();
-        	Robot.driveCameraFront.getImage(image);
-        	Robot.server.setImage(image); 
+        	currentCamera = driveCameraFront;
         }
+    	currentCamera.getImage(image);
+        Robot.server.setImage(image); 
+
         
     }
 

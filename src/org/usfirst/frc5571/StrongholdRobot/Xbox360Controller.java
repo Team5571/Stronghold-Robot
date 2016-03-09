@@ -243,7 +243,7 @@ public class Xbox360Controller extends GenericHID  {
 
 	@Override
 	public int getPOV(int pov) {
-		return (int) m_ds.getStickAxis(m_port, Xbox360Controller.AxisType.kDLeftRight_val);
+		return (int) m_ds.getStickPOV(m_port, 0);
 	}
 
 	public void setTriggerTwistSensitivity(double triggertwistSensitivity) {
