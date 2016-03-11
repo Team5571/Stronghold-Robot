@@ -59,7 +59,9 @@ public class Robot extends IterativeRobot {
     public static USBCamera driveCameraLeft;
     public static USBCamera driveCameraRear;
     public static Image image;
-	USBCamera currentCamera;
+	private USBCamera currentCamera;
+	private int frameUpdateCounter;
+	
 
     /**
      * This function is run when the robot is first started up and should be
@@ -91,20 +93,33 @@ public class Robot extends IterativeRobot {
 //                "Error when starting the Shooting camera: "  + ex.getMessage(), true);
 //          }
        
-       shootingCamera = new USBCamera("cam0");
-       shootingCamera.setFPS(15);
-       shootingCamera.setExposureAuto();
-       shootingCamera.updateSettings();
+       
        //shootingCamera.startCapture();
        
-       driveCameraFront = new USBCamera("cam1");
+       driveCameraFront = new USBCamera("cam0");
        driveCameraFront.setFPS(15);
        driveCameraFront.setExposureAuto();
        driveCameraFront.updateSettings();
-       //driveCameraFront.startCapture();
-      // Timer.delay(2);
+       
+       driveCameraLeft = new USBCamera("cam1");
+       driveCameraLeft.setFPS(15);
+       driveCameraLeft.setExposureAuto();
+       driveCameraLeft.updateSettings();
+      
+       
+       driveCameraRight = new USBCamera("cam2");
+       driveCameraRight.setFPS(15);
+       driveCameraRight.setExposureAuto();
+       driveCameraRight.updateSettings();
+      
+       shootingCamera = new USBCamera("cam3");
+       shootingCamera.setFPS(15);
+       shootingCamera.setExposureAuto();
+       shootingCamera.updateSettings();
+       
       currentCamera = driveCameraFront;
       currentCamera.startCapture();
+      frameUpdateCounter = 0;
        
 //        driveCameraFront = new USBCamera("cam1");
 //        driveCameraRight = new USBCamera("cam2");
@@ -198,23 +213,50 @@ public class Robot extends IterativeRobot {
     public void disabledPeriodic() {
         Scheduler.getInstance().run();
         int pointOfView;
-        Scheduler.getInstance().run();
-        
+        frameUpdateCounter++;
+        boolean cameraSwitchFlag = false;
         pointOfView = Robot.oi.xboxController.getPOV(0);
         SmartDashboard.putNumber("POV", pointOfView);
         if (pointOfView == 0)
         {
-        	Robot.driveCameraFront.stopCapture();
-        	Robot.shootingCamera.startCapture();
-        	currentCamera = shootingCamera;
+        	cameraSwitchFlag = true;
+        	shootingCamera.stopCapture();
+        	driveCameraFront.stopCapture();
+        	driveCameraLeft.stopCapture();
+        	driveCameraRight.stopCapture();
+        	currentCamera =  driveCameraFront;
         }
         else if (pointOfView == 90)
         {
-        	Robot.shootingCamera.stopCapture();
-        	Robot.driveCameraFront.startCapture();
-        	currentCamera = driveCameraFront;
+        	cameraSwitchFlag = true;
+        	shootingCamera.stopCapture();
+        	driveCameraFront.stopCapture();
+        	driveCameraLeft.stopCapture();
+        	driveCameraRight.stopCapture();
+        	currentCamera = driveCameraRight;
         }
-    	currentCamera.getImage(image);
+        else if (pointOfView == 270)
+        {
+        	cameraSwitchFlag = true;
+        	shootingCamera.stopCapture();
+        	driveCameraFront.stopCapture();
+        	driveCameraLeft.stopCapture();
+        	driveCameraRight.stopCapture();
+        	currentCamera = driveCameraLeft;
+        }
+        else if (pointOfView == 180)
+        {
+        	cameraSwitchFlag = true;
+        	shootingCamera.stopCapture();
+        	driveCameraFront.stopCapture();
+        	driveCameraLeft.stopCapture();
+        	driveCameraRight.stopCapture();
+        	currentCamera = shootingCamera;
+        }
+        if (cameraSwitchFlag) {
+        currentCamera.startCapture();
+        }
+        currentCamera.getImage(image);
         Robot.server.setImage(image); 
     }
 
@@ -248,29 +290,54 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putBoolean("XboxAButton", oi.getXbox().getRawButton(1));
         SmartDashboard.putDouble("XboxRghtX", oi.getXbox().getX(Hand.kRight));
         
-        int pointOfView;
         Scheduler.getInstance().run();
-        
+        int pointOfView;
+        frameUpdateCounter++;
+        boolean cameraSwitchFlag = false;
         pointOfView = Robot.oi.xboxController.getPOV(0);
         SmartDashboard.putNumber("POV", pointOfView);
         if (pointOfView == 0)
         {
-        	Robot.driveCameraFront.stopCapture();
-        	Robot.shootingCamera.startCapture();
-        	currentCamera = shootingCamera;
+        	cameraSwitchFlag = true;
+        	shootingCamera.stopCapture();
+        	driveCameraFront.stopCapture();
+        	driveCameraLeft.stopCapture();
+        	driveCameraRight.stopCapture();
+        	currentCamera =  driveCameraFront;
         }
         else if (pointOfView == 90)
         {
-        	Robot.shootingCamera.stopCapture();
-        	Robot.driveCameraFront.startCapture();
-        	currentCamera = driveCameraFront;
+        	cameraSwitchFlag = true;
+        	shootingCamera.stopCapture();
+        	driveCameraFront.stopCapture();
+        	driveCameraLeft.stopCapture();
+        	driveCameraRight.stopCapture();
+        	currentCamera = driveCameraRight;
         }
-    	currentCamera.getImage(image);
+        else if (pointOfView == 270)
+        {
+        	cameraSwitchFlag = true;
+        	shootingCamera.stopCapture();
+        	driveCameraFront.stopCapture();
+        	driveCameraLeft.stopCapture();
+        	driveCameraRight.stopCapture();
+        	currentCamera = driveCameraLeft;
+        }
+        else if (pointOfView == 180)
+        {
+        	cameraSwitchFlag = true;
+        	shootingCamera.stopCapture();
+        	driveCameraFront.stopCapture();
+        	driveCameraLeft.stopCapture();
+        	driveCameraRight.stopCapture();
+        	currentCamera = shootingCamera;
+        }
+        if (cameraSwitchFlag) {
+        currentCamera.startCapture();
+        }
+        currentCamera.getImage(image);
         Robot.server.setImage(image); 
-
-        
     }
-
     /**
      * This function is called periodically during test mode
      */

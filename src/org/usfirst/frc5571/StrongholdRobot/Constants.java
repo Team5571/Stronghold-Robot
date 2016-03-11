@@ -80,7 +80,7 @@ public class Constants {
 	public final static boolean	SHOOTER_RIGHT_WHEEL_INVERTED					= true;
 	public final static boolean	SHOOTER_LEFT_WHEEL_INVERT_SENSOR				= false;
 	public final static boolean	SHOOTER_RIGHT_WHEEL_INVERT_SENSOR				= false;
-	public final static double SHOOTER_WHEEL_INTAKE_SPEED						= 0.5;
+	public final static double SHOOTER_WHEEL_INTAKE_SPEED						= 0.75;
 	public final static double SHOOTER_WHEEL_HIGH_SPEED							=-1.0;
 	public final static double SHOOTER_WHEEL_SPINUP_DELAY						= 1.0;
 
