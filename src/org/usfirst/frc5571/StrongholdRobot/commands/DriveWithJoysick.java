@@ -11,6 +11,7 @@
 
 package org.usfirst.frc5571.StrongholdRobot.commands;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc5571.StrongholdRobot.Constants;
@@ -47,9 +48,22 @@ public class DriveWithJoysick extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Xbox360Controller xbox;
+    	Joystick logitech;
     	xbox = Robot.oi.getXbox();
-    	double magnitude = xbox.getRawAxis(Constants.XBOX_DRIVING_MAGNITUDE_JOYSTICK);
-    	double turn = xbox.getRawAxis(Constants.XBOX_DRIVING_TURN_JOYSTICK);
+    	logitech = Robot.oi.getDriveJoystick();
+    	double magnitude;
+    	double turn;
+    	
+    	if (logitech.getRawButton(Constants.LOGITECH3DPRO_TRIGGER_BUTTON)) { // Shooter has control
+        	turn = xbox.getRawAxis(Constants.XBOX_DRIVING_TURN_JOYSTICK) * Constants.XBOX_MAGNITUDE_SCALE_FACTOR;
+    	   	magnitude = xbox.getRawAxis(Constants.XBOX_DRIVING_MAGNITUDE_JOYSTICK) * Constants.XBOX_TWIST_SCALE_FACTOR;
+    	} 		
+    	
+    	else
+    	{
+    		magnitude = logitech.getRawAxis(Constants.LOGITECH3DPRO_Y_AXIS) * Constants.LOGITECH_MAGNITUDE_SCALE_FACTOR;
+        	turn = logitech.getRawAxis(Constants.LOGITECH3DPRO_Z_AXIS) * Constants.LOGITECH_TWIST_SCALE_FACTOR;
+    	}
     	RobotMap.driveTrainRobotDrive21.arcadeDrive(magnitude,turn);
     }
 

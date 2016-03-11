@@ -215,7 +215,7 @@ public class Robot extends IterativeRobot {
         int pointOfView;
         frameUpdateCounter++;
         boolean cameraSwitchFlag = false;
-        pointOfView = Robot.oi.xboxController.getPOV(0);
+        pointOfView = Robot.oi.driveJoystick.getPOV(0);
         SmartDashboard.putNumber("POV", pointOfView);
         if (pointOfView == 0)
         {
@@ -294,7 +294,7 @@ public class Robot extends IterativeRobot {
         int pointOfView;
         frameUpdateCounter++;
         boolean cameraSwitchFlag = false;
-        pointOfView = Robot.oi.xboxController.getPOV(0);
+        pointOfView = Robot.oi.driveJoystick.getPOV(0);
         SmartDashboard.putNumber("POV", pointOfView);
         if (pointOfView == 0)
         {

@@ -35,6 +35,15 @@ public class Constants {
 	public final static int XBOX_KICK_BOULDER					= XBOX_LEFT_JOYSTICK_BUTTON;
 
 	
+	// Logitech Extreme 3D Pro Joystick 
+	public final static int LOGITECH3DPRO_X_AXIS						= 0;
+	public final static int LOGITECH3DPRO_Y_AXIS						= 1;
+	public final static int LOGITECH3DPRO_Z_AXIS						= 2;
+	public final static int LOGITECH3DPRO_SLIDER_AXIS					= 3;
+	public final static int LOGITECH3DPRO_TRIGGER_BUTTON				= 1;
+	public final static int LOGITECH3DPRO_JOYSTICK_SIDE_BUTTON			= 2;
+	public final static int LOGITECH3DPRO_POV							= 0;
+
 	//*********************************************************************************
 	// DriveTrain Constants
 	public final static double DRIVE_TRAIN_POSITION_Kp							= 0.0;
@@ -48,10 +57,16 @@ public class Constants {
 	public final static double DRIVE_TRAIN_VELOCITY_Kf							= 0.0;
 	
 	// Drive train tuning parmeters used in 2015 Recycle Rush Robot
-	static double FAST_DRIVE_MAGNITUDE_SCALE = 0.5;
-	static double FAST_DRIVE_TWIST_SCALE = 0.75;
-	static double FINE_DRIVE_MAGNITUDE_SCALE = 0.3;
-	static double FINE_DRIVE_TWIST_SCALE = 0.45;
+	static double FAST_DRIVE_MAGNITUDE_SCALE 									= 0.5;
+	static double FAST_DRIVE_TWIST_SCALE 										= 0.75;
+	static double FINE_DRIVE_MAGNITUDE_SCALE									= 0.3;
+	static double FINE_DRIVE_TWIST_SCALE										= 0.45;
+	
+	public static final double XBOX_MAGNITUDE_SCALE_FACTOR						= 0.5;
+	public static final double XBOX_TWIST_SCALE_FACTOR							= 0.5;
+	
+	public static final double LOGITECH_MAGNITUDE_SCALE_FACTOR					= 0.2;
+	public static final double LOGITECH_TWIST_SCALE_FACTOR						= 0.2;
 
 	
 	//*********************************************************************************
