@@ -54,9 +54,9 @@ public class DriveWithJoysick extends Command {
     	double magnitude;
     	double turn;
     	
-    	if (logitech.getRawButton(Constants.LOGITECH3DPRO_TRIGGER_BUTTON)) { // Shooter has control
-        	turn = xbox.getRawAxis(Constants.XBOX_DRIVING_TURN_JOYSTICK) * Constants.XBOX_MAGNITUDE_SCALE_FACTOR;
-    	   	magnitude = xbox.getRawAxis(Constants.XBOX_DRIVING_MAGNITUDE_JOYSTICK) * Constants.XBOX_TWIST_SCALE_FACTOR;
+    	if (!logitech.getRawButton(Constants.LOGITECH3DPRO_TRIGGER_BUTTON)) { // Shooter has control
+        	turn = xbox.getRawAxis(Constants.XBOX_DRIVING_TURN_JOYSTICK) * Constants.XBOX_TWIST_SCALE_FACTOR;
+    	   	magnitude = xbox.getRawAxis(Constants.XBOX_DRIVING_MAGNITUDE_JOYSTICK) * Constants.XBOX_MAGNITUDE_SCALE_FACTOR;
     	} 		
     	
     	else
