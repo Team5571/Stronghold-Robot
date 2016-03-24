@@ -52,11 +52,14 @@ public class DriveWithJoysick extends Command {
     	xbox = Robot.oi.getXbox();
     	logitech = Robot.oi.getDriveJoystick();
     	double magnitude;
+    	double trigger_twist;
     	double turn;
     	
     	if (!logitech.getRawButton(Constants.LOGITECH3DPRO_TRIGGER_BUTTON)) { // Shooter has control
         	turn = xbox.getRawAxis(Constants.XBOX_DRIVING_TURN_JOYSTICK) * Constants.XBOX_TWIST_SCALE_FACTOR;
     	   	magnitude = xbox.getRawAxis(Constants.XBOX_DRIVING_MAGNITUDE_JOYSTICK) * Constants.XBOX_MAGNITUDE_SCALE_FACTOR;
+    	   	trigger_twist = (((xbox.getRawAxis(2) * -1) + xbox.getRawAxis(3)) * Constants.XBOX_TRIGGER_TWIST_SCALE_FACTOR); 
+    	   	turn = trigger_twist + turn;
     	} 		
     	
     	else
