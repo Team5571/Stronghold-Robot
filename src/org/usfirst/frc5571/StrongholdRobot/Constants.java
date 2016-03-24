@@ -66,7 +66,7 @@ public class Constants {
 	
 	public static final double XBOX_MAGNITUDE_SCALE_FACTOR						= 0.5;
 	public static final double XBOX_TWIST_SCALE_FACTOR							= 0.65;
-	public static final double XBOX_TRIGGER_TWIST_SCALE_FACTOR					= 0.5;
+	public static final double XBOX_TRIGGER_TWIST_SCALE_FACTOR					= 0.7;
 	
 	public static final double LOGITECH_MAGNITUDE_SCALE_FACTOR					= 1.0;
 	public static final double LOGITECH_TWIST_SCALE_FACTOR						= 1.0;
