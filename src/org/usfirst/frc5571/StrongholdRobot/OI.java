@@ -92,7 +92,7 @@ public class OI {
         
 //      aimBoulderPickup = new JoystickButton(xboxController, Constants.XBOX_AIM_PICKUP);
 //      aimBoulderPickup.whenPressed(new ShooterAimClosedLoop(Constants.SHOOTER_ANGLE_LOAD_SETPOINT));
-      aimLowShot = new JoystickButton(xboxController, Constants.XBOX_AIM_PICKUP);
+      aimLowShot = new JoystickButton(xboxController, Constants.XBOX_AIM_LOWSHOT);
       aimLowShot.whenPressed(new ShooterAimClosedLoop(Constants.SHOOTER_ANGLE_LOWSHOT_SETPOINT));
       aimHighShot = new JoystickButton(xboxController, Constants.XBOX_AIM_HIGHSHOT);
       aimHighShot.whenPressed(new ShooterAimClosedLoop(Constants.SHOOTER_ANGLE_HIGHSHOT_SETPOINT));
@@ -100,8 +100,8 @@ public class OI {
       loadBoulder.whileHeld(new ShooterCaptureBoulder());
       loadBoulder.whenReleased(new ShooterAimClosedLoop(Constants.SHOOTER_ANGLE_PARKING_SETPOINT));
       shootBoulder = new JoystickButton(xboxController, Constants.XBOX_SHOOTER_WHEELS_SHOOT);
-      shootBoulder.whenPressed(new ShooterWheelsFastBall());
-      shootBoulder.whenReleased(new ShooterWheelsSlowBall());
+      shootBoulder.whileHeld(new ShooterWheelsFastBall());
+      shootBoulder.whenReleased(new ShooterWheelsStop());
       stopShooterWheels = new JoystickButton(xboxController, Constants.XBOX_RIGHT_JOYSTICK_BUTTON);
       stopShooterWheels.whenPressed(new ShooterWheelsStop());
       shiftToHighGear = new JoystickButton(xboxController, Constants.XBOX_HIGH_GEAR_BUTTON);
