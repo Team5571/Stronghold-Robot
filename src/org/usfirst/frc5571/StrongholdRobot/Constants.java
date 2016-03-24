@@ -86,6 +86,7 @@ public class Constants {
 	public final static int SHOOTER_ANGLE_LOAD_SETPOINT							= 755;
 	public final static int SHOOTER_AIMING_ERROR_THRESHOLD						= 20;
 	public final static double SHOOTER_AIMING_ACTUATOR_DEADZONE					= 0.10;
+	public final static double SHOOTER_AIMING_ACTUATOR_SCALING_FACTOR			= 0.75;
 	
 	public final static double SHOOTER_WHEELS_VELOCITY_Kp						= 0.0;
 	public final static double SHOOTER_WHEELS_VELOCITY_Ki						= 0.0;
