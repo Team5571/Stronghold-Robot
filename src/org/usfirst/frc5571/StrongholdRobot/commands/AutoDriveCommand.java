@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc5571.StrongholdRobot.Constants;
 import org.usfirst.frc5571.StrongholdRobot.Robot;
 import org.usfirst.frc5571.StrongholdRobot.RobotMap;
+import org.usfirst.frc5571.StrongholdRobot.subsystems.Pneumatics;
 
 /**
  *
@@ -43,17 +44,20 @@ public class AutoDriveCommand extends Command {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
 		requires(Robot.driveTrain);
+		requires(Robot.pneumatics);
 		timer = new Timer();
 		autoMagnitude = magnitude;
 		//autoDirection = direction;
 		autoRotation = rotation;
-		autoDriveDuration = duration;	
+		autoDriveDuration = duration;
+		Robot.pneumatics.setArmsDown();
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
 		timer.reset();
 		timer.start();
+		Robot.pneumatics.setArmsDown();
 		RobotMap.driveTrainRobotDrive21.arcadeDrive(autoMagnitude, autoRotation);
 	}
 
