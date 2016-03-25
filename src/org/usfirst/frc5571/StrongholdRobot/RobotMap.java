@@ -57,7 +57,7 @@ public class RobotMap {
         
         driveTrainRobotDrive21 = new RobotDrive(driveTrainLeftWheels, driveTrainRightWheels);
         
-        driveTrainRobotDrive21.setSafetyEnabled(true);
+        driveTrainRobotDrive21.setSafetyEnabled(false);
         driveTrainRobotDrive21.setExpiration(0.1);
         driveTrainRobotDrive21.setSensitivity(0.5);
         driveTrainRobotDrive21.setMaxOutput(1.0);

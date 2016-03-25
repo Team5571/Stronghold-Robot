@@ -70,6 +70,8 @@ public class Constants {
 	
 	public static final double LOGITECH_MAGNITUDE_SCALE_FACTOR					= 1.0;
 	public static final double LOGITECH_TWIST_SCALE_FACTOR						= 1.0;
+	
+	public static double AUTONOMOUS_DRIVE_SPEED									= 0.25;
 
 	
 	//*********************************************************************************
