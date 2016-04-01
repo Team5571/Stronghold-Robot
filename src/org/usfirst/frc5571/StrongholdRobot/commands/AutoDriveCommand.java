@@ -44,20 +44,17 @@ public class AutoDriveCommand extends Command {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
 		requires(Robot.driveTrain);
-		requires(Robot.pneumatics);
 		timer = new Timer();
 		autoMagnitude = magnitude;
 		//autoDirection = direction;
 		autoRotation = rotation;
 		autoDriveDuration = duration;
-		Robot.pneumatics.setArmsDown();
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
 		timer.reset();
 		timer.start();
-		Robot.pneumatics.setArmsDown();
 		RobotMap.driveTrainRobotDrive21.arcadeDrive(autoMagnitude, autoRotation);
 	}
 

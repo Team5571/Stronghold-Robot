@@ -1,6 +1,7 @@
 package org.usfirst.frc5571.StrongholdRobot.commands;
 
 import org.usfirst.frc5571.StrongholdRobot.Constants;
+import org.usfirst.frc5571.StrongholdRobot.Robot;
 import org.usfirst.frc5571.StrongholdRobot.subsystems.Pneumatics;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -29,8 +30,10 @@ public class AutonomousMoat extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	
+    	requires(Robot.driveTrain);
+    	requires(Robot.pneumatics);
+    	addSequential(new WaitCommand(10.0));
     	addSequential(new PneumaticsRaiseArms());
-    	addSequential(new WaitCommand(5));
     	addSequential(new ShooterAimClosedLoop(Constants.SHOOTER_ANGLE_PARKING_SETPOINT));
     	addSequential(new AutoDriveCommand(-0.80, 0, 3.5));
     }
