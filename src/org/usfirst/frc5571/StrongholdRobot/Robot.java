@@ -180,6 +180,7 @@ public class Robot extends IterativeRobot {
         
     // Shooter
         shooter.initShooter();
+        Robot.pneumatics.setArmsUp();
         
 //    // Gyro
 //        try {

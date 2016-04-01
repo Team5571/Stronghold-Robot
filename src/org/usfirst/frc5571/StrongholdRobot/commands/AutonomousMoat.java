@@ -32,9 +32,9 @@ public class AutonomousMoat extends CommandGroup {
     	
     	requires(Robot.driveTrain);
     	requires(Robot.pneumatics);
-    	addSequential(new WaitCommand(10.0));
     	addSequential(new PneumaticsRaiseArms());
     	addSequential(new ShooterAimClosedLoop(Constants.SHOOTER_ANGLE_PARKING_SETPOINT));
+    	addSequential(new WaitCommand(5.0));
     	addSequential(new AutoDriveCommand(-0.80, 0, 3.5));
     }
 }

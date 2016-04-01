@@ -86,7 +86,7 @@ public class Constants {
 	public final static int SHOOTER_FORWARD_SOFTLIMIT							= 760; 
 	public final static int SHOOTER_REVERSE_SOFTLIMIT							= 70;
 	public final static int SHOOTER_ANGLE_HIGHSHOT_SETPOINT						= 100;
-	public final static int SHOOTER_ANGLE_LOWSHOT_SETPOINT						= 650;
+	public final static int SHOOTER_ANGLE_LOWSHOT_SETPOINT						= 740;
 	public final static int SHOOTER_ANGLE_PARKING_SETPOINT						= 200;
 	public final static int SHOOTER_ANGLE_LOAD_SETPOINT							= 755;
 	public final static int SHOOTER_AIMING_ERROR_THRESHOLD						= 20;
@@ -103,13 +103,14 @@ public class Constants {
 	public final static boolean	SHOOTER_RIGHT_WHEEL_INVERT_SENSOR				= false;
 	public final static double SHOOTER_WHEEL_INTAKE_SPEED						= 0.75;
 	public final static double SHOOTER_WHEEL_HIGH_SPEED							=-1.0;
+	public final static double SHOOTER_WHEEL_LOW_SPEED							=-0.70;
 	public final static double SHOOTER_WHEEL_SPINUP_DELAY						= 1.0;
 
 	
 	//*********************************************************************************
 	//Pneumatics Constants
-	public final static boolean ARMS_UP												= true;
-	public final static boolean ARMS_DOWN											= false;
+	public final static boolean ARMS_UP												= false;
+	public final static boolean ARMS_DOWN											= true;
 	public final static boolean LOW_GEAR											= false;
 	public final static boolean HIGH_GEAR											= true;
 	public final static boolean BOULDER_KICKER_ARMED								= false;

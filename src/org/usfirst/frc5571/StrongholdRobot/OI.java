@@ -100,7 +100,7 @@ public class OI {
       loadBoulder.whileHeld(new ShooterCaptureBoulder());
       loadBoulder.whenReleased(new ShooterAimClosedLoop(Constants.SHOOTER_ANGLE_PARKING_SETPOINT));
       shootBoulder = new JoystickButton(xboxController, Constants.XBOX_SHOOTER_WHEELS_SHOOT);
-      shootBoulder.whileHeld(new ShooterWheelsFastBall());
+      shootBoulder.whenPressed(new ShootLowGoal());
       shootBoulder.whenReleased(new ShooterWheelsStop());
       stopShooterWheels = new JoystickButton(xboxController, Constants.XBOX_RIGHT_JOYSTICK_BUTTON);
       stopShooterWheels.whenPressed(new ShooterWheelsStop());
@@ -113,7 +113,7 @@ public class OI {
       raiseArms = new JoystickButton(xboxController, Constants.XBOX_ARMS_UP_BUTTON);
       raiseArms.whenPressed(new PneumaticsRaiseArms());
       kickBoulder = new JoystickButton(xboxController, Constants.XBOX_KICK_BOULDER);
-      kickBoulder.whenPressed(new PneumaticsKickBoulder());
+      kickBoulder.whenPressed(new ShootHighGoal());
 //      kickBoulder.whenReleased(new PneumaticsRetractKicker());
       
         // SmartDashboard Buttons
