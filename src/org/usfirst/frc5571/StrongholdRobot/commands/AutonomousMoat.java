@@ -35,6 +35,6 @@ public class AutonomousMoat extends CommandGroup {
     	addSequential(new PneumaticsRaiseArms());
     	addSequential(new ShooterAimClosedLoop(Constants.SHOOTER_ANGLE_PARKING_SETPOINT));
     	addSequential(new WaitCommand(5.0));
-    	addSequential(new AutoDriveCommand(-0.80, 0, 3.5));
+    	addSequential(new AutoDriveCommand(-0.80, 0, 4.5));
     }
 }

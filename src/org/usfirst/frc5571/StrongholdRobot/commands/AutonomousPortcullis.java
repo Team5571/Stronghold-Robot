@@ -32,6 +32,6 @@ public class AutonomousPortcullis extends CommandGroup {
     	addSequential(new PneumaticsLowerArms());
     	addSequential(new ShooterAimClosedLoop(Constants.SHOOTER_ANGLE_LOWSHOT_SETPOINT));
     	addSequential(new WaitCommand(5));
-    	addSequential(new AutoDriveCommand(-0.80, 0, 3.5));
+    	addSequential(new AutoDriveCommand(-0.85, 0, 4.5));
     }
 }
