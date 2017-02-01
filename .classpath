@@ -14,5 +14,8 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="StrongholdRobot/navx-mxp/java/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="var" path="opencv" sourcepath="opencv.sources"/>
+	<classpathentry kind="var" path="cscore" sourcepath="cscore.sources"/>
+	<classpathentry kind="var" path="USERLIBS_DIR/CTRLib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -11,13 +11,15 @@
 
 package org.usfirst.frc5571.StrongholdRobot.commands;
 
-import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
+//import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc5571.StrongholdRobot.Robot;
 import org.usfirst.frc5571.StrongholdRobot.RobotMap;
 import org.usfirst.frc5571.StrongholdRobot.Constants;
+import com.ctre.*;
+import com.ctre.CANTalon.TalonControlMode;
 
 import java.lang.Math;
 

@@ -13,8 +13,8 @@ package org.usfirst.frc5571.StrongholdRobot.subsystems;
 
 import org.usfirst.frc5571.StrongholdRobot.RobotMap;
 import org.usfirst.frc5571.StrongholdRobot.commands.*;
-import edu.wpi.first.wpilibj.CANTalon;
-
+import com.ctre.*;
+import com.ctre.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
