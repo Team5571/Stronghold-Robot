@@ -160,7 +160,7 @@ public class Xbox360Controller extends GenericHID  {
 	 * @param port USB Port on DriverStation
 	 */
 	public Xbox360Controller(int port) {
-		super();
+		super(port);
 		m_port = port;
 		m_ds = DriverStation.getInstance();
 		twistScaleFactor = 1.0;
@@ -194,7 +194,7 @@ public class Xbox360Controller extends GenericHID  {
 	@Override
 	public double getZ(Hand hand) {
 		// TODO Auto-generated method stub
-		return 0;
+		return m_ds.getZ 
 	}
 
 	@Override
